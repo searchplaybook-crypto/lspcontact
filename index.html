@@ -13,33 +13,57 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #fff;
-      color: #1a1a1a;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
     }
 
     .hero {
       width: 100%;
       height: 100vh;
-      background-image: url('https://i.imgur.com/mvztspH.jpg');
+      background-image: url('https://ik.imagekit.io/searchplaybook/bg-image.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      display: none;
+    }
+
+    .hero-content h1 {
+      display: none;
+    }
+
+    .hero-content p {
+      display: none;
     }
 
     footer {
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.85);
       padding: 3rem 2rem;
       text-align: center;
       width: 100%;
+      position: relative;
+      z-index: 3;
     }
 
     .contact-tabs {
       display: flex;
-      gap: 2rem;
+      gap: 3rem;
       justify-content: center;
       flex-wrap: wrap;
       margin-bottom: 2rem;
@@ -49,37 +73,41 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
       text-decoration: none;
       color: #FFD700;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
     }
 
     .contact-tab:hover {
       color: #fff;
+      transform: scale(1.1);
     }
 
     .contact-icon {
-      font-size: 2rem;
-      width: 60px;
-      height: 60px;
+      font-size: 2.5rem;
+      width: 80px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: rgba(255, 215, 0, 0.1);
-      border: 1px solid #FFD700;
+      border: 2px solid #FFD700;
       border-radius: 50%;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
     }
 
     .contact-tab:hover .contact-icon {
       background: #FFD700;
       color: #000;
+      border-color: #FFD700;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
     }
 
     .contact-label {
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-weight: 600;
+      letter-spacing: 0.05em;
     }
 
     .footer-bottom {
@@ -92,11 +120,25 @@
 
     @media (max-width: 768px) {
       .contact-tabs {
-        gap: 1rem;
+        gap: 1.5rem;
+      }
+
+      .contact-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+      }
+
+      .contact-label {
+        font-size: 0.9rem;
       }
 
       footer {
         padding: 2rem 1rem;
+      }
+
+      .hero-content {
+        padding: 1.5rem;
       }
     }
   </style>
@@ -104,29 +146,34 @@
 <body>
 
 <section class="hero">
-  <footer>
-    <div class="contact-tabs">
-      <a href="https://wa.me/27722350002" class="contact-tab" target="_blank">
-        <div class="contact-icon">💬</div>
-        <span class="contact-label">WhatsApp</span>
-      </a>
-      
-      <a href="https://maps.app.goo.gl/WezVn4JTE8Q69oV3A" class="contact-tab" target="_blank">
-        <div class="contact-icon">📍</div>
-        <span class="contact-label">Google Profile</span>
-      </a>
-      
-      <a href="mailto:lspsales@mweb.co.za" class="contact-tab">
-        <div class="contact-icon">✉️</div>
-        <span class="contact-label">Email</span>
-      </a>
-    </div>
-
-    <div class="footer-bottom">
-      <p>Set and Forget | Theme by WeMustCreate | local optimized</p>
-    </div>
-  </footer>
+  <div class="hero-content">
+    <h1>South Africa's Trusted Locksmith & Security Supplier</h1>
+    <p>Verified Wholesale Supplier | Serving Locksmiths & Security Professionals Since 1970</p>
+  </div>
 </section>
+
+<footer>
+  <div class="contact-tabs">
+    <a href="https://wa.me/27722350002" class="contact-tab" target="_blank">
+      <div class="contact-icon">💬</div>
+      <span class="contact-label">WhatsApp</span>
+    </a>
+    
+    <a href="https://maps.app.goo.gl/WezVn4JTE8Q69oV3A" class="contact-tab" target="_blank">
+      <div class="contact-icon">📍</div>
+      <span class="contact-label">Google Profile</span>
+    </a>
+    
+    <a href="mailto:lspsales@mweb.co.za" class="contact-tab">
+      <div class="contact-icon">✉️</div>
+      <span class="contact-label">Email</span>
+    </a>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Set and Forget | Theme by WeMustCreate | local optimized</p>
+  </div>
+</footer>
 
 </body>
 </html>
