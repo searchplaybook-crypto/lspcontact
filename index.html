@@ -1,344 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LSPza - Connect</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <title>LSP | Locksmith Security Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Raleway', sans-serif;
-            color: #1a1a1a;
-            background: #fff;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+    }
 
-        .hero {
-            width: 100%;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background-image: url('https://i.imgur.com/mvztspH.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
 
-        footer {
-            background: #fff;
-            padding: 3rem 2rem;
-        }
+    footer {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 3rem 2rem;
+      text-align: center;
+      width: 100%;
+    }
 
-        .footer-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
+    .contact-tabs {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
 
-        .footer-left h2 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: #1a1a1a;
-        }
+    .contact-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #FFD700;
+      transition: all 0.3s;
+    }
 
-        .cta-section {
-            margin-bottom: 2rem;
-        }
+    .contact-tab:hover {
+      color: #fff;
+    }
 
-        .cta-btn {
-            background: #1a1a1a;
-            color: #fff;
-            border: none;
-            padding: 1rem 2rem;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 4px;
-            text-transform: uppercase;
-            transition: background 0.3s;
-            display: inline-block;
-            text-decoration: none;
-        }
+    .contact-icon {
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid #FFD700;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
 
-        .cta-btn:hover {
-            background: #333;
-        }
+    .contact-tab:hover .contact-icon {
+      background: #FFD700;
+      color: #000;
+    }
 
-        .contact-info {
-            margin-bottom: 2rem;
-        }
+    .contact-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
 
-        .contact-item {
-            margin-bottom: 1.5rem;
-        }
+    .footer-bottom {
+      font-size: 0.85rem;
+      color: #FFD700;
+      border-top: 1px solid #FFD700;
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
 
-        .contact-label {
-            font-weight: 600;
-            color: #1a1a1a;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
+    @media (max-width: 768px) {
+      .contact-tabs {
+        gap: 1rem;
+      }
 
-        .contact-value {
-            color: #666;
-        }
-
-        .contact-value a {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .contact-value a:hover {
-            text-decoration: underline;
-        }
-
-        .map-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 4px;
-        }
-
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .footer-bottom {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #ddd;
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-            grid-column: 1 / -1;
-        }
-
-        @media (max-width: 768px) {
-            .footer-wrapper {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .cta-btn {
-                display: block;
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
+      footer {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="hero" style="background-image: url('https://raw.githubusercontent.com/searchplaybook-crypto/lspcontact/refs/heads/main/bg-image.png')"></div>
 
-    <footer>
-        <div class="footer-wrapper">
-            <div class="footer-left">
-                <h2>Connect with LSP</h2>
-                
-                <div class="cta-section">
-                    <a href="https://wa.me/27722350002" class="cta-btn">Connect on WhatsApp</a>
-                </div>
+<section class="hero">
+  <footer>
+    <div class="contact-tabs">
+      <a href="https://wa.me/27722350002" class="contact-tab" target="_blank">
+        <div class="contact-icon">💬</div>
+        <span class="contact-label">WhatsApp</span>
+      </a>
+      
+      <a href="https://maps.app.goo.gl/WezVn4JTE8Q69oV3A" class="contact-tab" target="_blank">
+        <div class="contact-icon">📍</div>
+        <span class="contact-label">Google Profile</span>
+      </a>
+      
+      <a href="mailto:lspsales@mweb.co.za" class="contact-tab">
+        <div class="contact-icon">✉️</div>
+        <span class="contact-label">Email</span>
+      </a>
+    </div>
 
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-label">Tell:</span>
-                        <span class="contact-value">(011) 683 0612</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Mobile:</span>
-                        <span class="contact-value">072 235 0002</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Email:</span>
-                        <span class="contact-value"><a href="mailto:lspsales@mweb.co.za">lspsales@mweb.co.za</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Location:</span>
-                        <span class="contact-value">Johannesburg, South Africa</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Google Profile:</span>
-                        <span class="contact-value"><a href="https://maps.app.goo.gl/WezVn4JTE8Q69oV3A" target="_blank">View on Google Maps</a></span>
-                    </div>
-                </div>
-            </div>
+    <div class="footer-bottom">
+      <p>Set and Forget | Theme by WeMustCreate | local optimized</p>
+    </div>
+  </footer>
+</section>
 
-            <div class="footer-right">
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.3208314769506!2d28.04287752346943!3d-26.20247872330891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950d4e4e4e4e4f%3A0x8f8f8f8f8f8f8f8f!2sJohannesburg%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>Set and Forget<br>Theme by WeMustCreate<br>local optimized</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .footer-left h2 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: #1a1a1a;
-        }
-
-        .cta-section {
-            margin-bottom: 2rem;
-        }
-
-        .cta-btn {
-            background: #1a1a1a;
-            color: #fff;
-            border: none;
-            padding: 1rem 2rem;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 4px;
-            text-transform: uppercase;
-            transition: background 0.3s;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .cta-btn:hover {
-            background: #333;
-        }
-
-        .contact-info {
-            margin-bottom: 2rem;
-        }
-
-        .contact-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-label {
-            font-weight: 600;
-            color: #1a1a1a;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-value {
-            color: #666;
-        }
-
-        .contact-value a {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .contact-value a:hover {
-            text-decoration: underline;
-        }
-
-        .map-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 4px;
-        }
-
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .footer-bottom {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #ddd;
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-            grid-column: 1 / -1;
-        }
-
-        @media (max-width: 768px) {
-            .footer-wrapper {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .cta-btn {
-                display: block;
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="hero" style="background-image: url('https://raw.githubusercontent.com/searchplaybook-crypto/lspcontact/refs/heads/main/bg-image.png')"></div>
-
-    <footer>
-        <div class="footer-wrapper">
-            <div class="footer-left">
-                <h2>Connect with LSP</h2>
-                
-                <div class="cta-section">
-                    <a href="https://wa.me/27722350002" class="cta-btn">Connect on WhatsApp</a>
-                </div>
-
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-label">Tell:</span>
-                        <span class="contact-value">(011) 683 0612</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Mobile:</span>
-                        <span class="contact-value">072 235 0002</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Email:</span>
-                        <span class="contact-value"><a href="mailto:lspsales@mweb.co.za">lspsales@mweb.co.za</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Location:</span>
-                        <span class="contact-value">Johannesburg, South Africa</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Google Profile:</span>
-                        <span class="contact-value"><a href="https://maps.app.goo.gl/WezVn4JTE8Q69oV3A" target="_blank">View on Google Maps</a></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-right">
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.3208314769506!2d28.04287752346943!3d-26.20247872330891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950d4e4e4e4e4f%3A0x8f8f8f8f8f8f8f8f!2sJohannesburg%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>Set and Forget<br>Theme by WeMustCreate<br>local optimized</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
