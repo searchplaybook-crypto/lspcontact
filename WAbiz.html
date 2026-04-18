@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>LSP WhatsApp Catalog | Locksmith Security Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0c12;
+            background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            padding: 1.5rem;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+            z-index: 0;
+        }
+
+        .catalog-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Business header (glass) */
+        .business-header {
+            background: rgba(20, 24, 32, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .business-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFF, #FFE0A0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .est {
+            font-size: 0.75rem;
+            color: #ffdf8c;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+            margin: 0.75rem 0;
+            color: #eef3ff;
+        }
+
+        .contact-row i {
+            width: 1.4rem;
+            color: #ffcd7e;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            transition: 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+
+        /* Catalog title */
+        .catalog-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .catalog-title i {
+            color: #25D366;
+        }
+
+        /* Product grid - WhatsApp catalog style */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: rgba(25, 30, 40, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,240,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: #fff;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.4);
+            border-color: rgba(255,200,100,0.5);
+        }
+
+        .product-img {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            background-color: #1e1e2a;
+            position: relative;
+        }
+
+        /* Placeholder icons for each category */
+        .product-badge {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .product-desc {
+            font-size: 0.75rem;
+            color: #cbd5ff;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .price {
+            font-weight: 700;
+            color: #ffdd99;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .order-btn {
+            display: inline-block;
+            background: rgba(37, 211, 102, 0.85);
+            color: white;
+            text-decoration: none;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .order-btn:hover {
+            background: #25D366;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.7rem;
+            color: #b9c7e5;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            .business-name { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="catalog-container">
+    <!-- Business Header (from LSP details) -->
+    <div class="business-header">
+        <div class="business-name">LOCKSMITH SECURITY PRODUCTS (PTY) Ltd</div>
+        <div class="est"><i class="fas fa-shield-alt"></i> Est. 1970 · B2B Wholesale since 1970</div>
+        <div class="contact-row">
+            <span><i class="fas fa-map-pin"></i> P.O. BOX 251557, EXCOM 2023</span>
+            <span><i class="fas fa-phone-alt"></i> (011) 683 0612</span>
+            <span><i class="fas fa-fax"></i> (011) 683 0613</span>
+        </div>
+        <div class="contact-row">
+            <span><i class="fas fa-user-tie"></i> Ismael Dawood · 072 235 0002</span>
+            <span><i class="fas fa-envelope"></i> lspsales@mweb.co.za</span>
+        </div>
+        <a href="https://wa.me/27722350002?text=Hello%20LSP%2C%20I%27m%20interested%20in%20your%20catalog%20products.%20Please%20share%20trade%20pricing." target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Message us on WhatsApp
+        </a>
+    </div>
+
+    <!-- Catalog Header -->
+    <div class="catalog-title">
+        <i class="fab fa-whatsapp"></i> WhatsApp Catalog · Premium Security Solutions
+    </div>
+
+    <!-- Product Grid: based on the "Premium Security Solutions" list from your image -->
+    <div class="product-grid">
+        <!-- Padlocks -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('https://placehold.co/600x400/2a2e3a/ffdd99?text=Padlocks'); background-size: cover;">
+                <div class="product-badge">🔒 Heavy Duty</div>
+            </div>
+            <div class="product-info">
+                <div class="product-title">Padlocks</div>
+                <div class="product-desc">High‑security laminated & solid brass padlocks. Shrouded shackle options. Ideal for gates, storage, and industrial use.</div>
+                <div class="price">Trade price on request</div>
+                <a href="https://wa.me/27722350002?text=Hi%2C%20I%20need%20pricing%20for%20PADLOCKS%20(wholesale)" target="_blank" class="order-btn"><i class="fab fa-whatsapp"></i> Inquire</a>
+            </div>
+        </div>
+
+        <!-- Cylinders & Keys -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('https://placehold.co/600x400/2a2e3a/ffdd99?text=Cylinders+%26+Keys'); background-size: cover;">
+                <div class="product-badge">🔑 Euro & KIK</div>
+            </div>
+            <div class="product-info">
+                <div class="product-title">Cylinders & Keys</div>
+                <div class="product-desc">Euro profile, mortise, and KIK cylinders. Master key systems, restricted keyways, and high‑security key blanks.</div>
+                <div class="price">Bulk pricing available</div>
+                <a href="https://wa.me/27722350002?text=I%27m%20interested%20in%20CYLINDERS%20and%20KEYS%20-%20please%20send%20catalog" target="_blank" class="order-btn"><i class="fab fa-whatsapp"></i> Inquire</a>
+            </div>
+        </div>
+
+        <!-- Automotive Security -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('https://placehold.co/600x400/2a2e3a/ffdd99?text=Automotive+Security'); background-size: cover;">
+                <div class="product-badge">🚗 Car & Bike</div>
+            </div>
+            <div class="product-info">
+                <div class="product-title">Automotive Security</div>
+                <div class="product-desc">Transponder keys, remote fobs, immobilizer bypass, steering locks, and vehicle tracking accessories.</div>
+                <div class="price">Wholesale trade rates</div>
+                <a href="https://wa.me/27722350002?text=Automotive%20security%20products%20inquiry%20-%20please%20share%20details" target="_blank" class="order-btn"><i class="fab fa-whatsapp"></i> Inquire</a>
+            </div>
+        </div>
+
+        <!-- Key Cutting Machines -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('https://placehold.co/600x400/2a2e3a/ffdd99?text=Key+Cutting+Machines'); background-size: cover;">
+                <div class="product-badge">⚙️ Professional</div>
+            </div>
+            <div class="product-info">
+                <div class="product-title">Key Cutting Machines</div>
+                <div class="product-desc">Manual and automatic duplicators, laser key cutters, and code machines. Brands: Silca, Keyline.</div>
+                <div class="price">Request quote</div>
+                <a href="https://wa.me/27722350002?text=Key%20cutting%20machine%20-%20model%20and%20price%20list%20please" target="_blank" class="order-btn"><i class="fab fa-whatsapp"></i> Inquire</a>
+            </div>
+        </div>
+
+        <!-- Locksmith Tools -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('https://placehold.co/600x400/2a2e3a/ffdd99?text=Locksmith+Tools'); background-size: cover;">
+                <div class="product-badge">🛠️ Professional Set</div>
+            </div>
+            <div class="product-info">
+                <div class="product-title">Locksmith Tools</div>
+                <div class="product-desc">Tension wrenches, pick sets, plug spinners, bypass tools, and installation jigs for trade professionals.</div>
+                <div class="price">Trade discount available</div>
+                <a href="https://wa.me/27722350002?text=Locksmith%20tools%20catalog%20-%20please%20send%20prices" target="_blank" class="order-btn"><i class="fab fa-whatsapp"></i> Inquire</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-key"></i> LSP – Official wholesale partner for security professionals. All prices exclude VAT. Request bulk trade pricing via WhatsApp.
+    </div>
+</div>
+</body>
+  </html>
